@@ -27,6 +27,8 @@
             android:paddingLeft="5dp"
             android:shadowColor="#f5ebeb"
             android:textColor="#fafafa"
+            android:textColorHighlight="#fcfbfa"
+            android:textColorHint="#fcfbfa"
             android:textSize="20sp" />
 
         <Button
@@ -35,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#f57433"
+            android:backgroundTint="#f57433"
             android:text="add" />
 
     </LinearLayout>
