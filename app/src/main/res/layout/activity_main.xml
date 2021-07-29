@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
+    android:background="#00031f"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,19 +15,31 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/edtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
+            android:backgroundTint="#fafafa"
             android:ems="10"
+            android:foregroundTint="#EFEAEA"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:shadowColor="#f5ebeb"
+            android:text="Name"
+            android:textColor="#fafafa"
+            android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Button" />
+
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4" />
 </androidx.appcompat.widget.LinearLayoutCompat>
