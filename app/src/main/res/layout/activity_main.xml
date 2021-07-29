@@ -26,7 +26,6 @@
             android:inputType="textPersonName"
             android:paddingLeft="5dp"
             android:shadowColor="#f5ebeb"
-            android:text="Name"
             android:textColor="#fafafa"
             android:textSize="20sp" />
 
@@ -35,7 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:background="#f57433"
+            android:text="add" />
 
     </LinearLayout>
 
