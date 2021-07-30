@@ -28,5 +28,13 @@ public class MainActivity extends AppCompatActivity {
         item=findViewById(R.id.edtext);
         add=findViewById(R.id.btn);
         liview=findViewById(R.id.list);
+
+        arli=helper.readData(this);
+
+        adarr=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,android.R.id.text2,arli);
+
+        liview.setAdapter(adarr);
+
+        
     }
 }
