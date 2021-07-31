@@ -3,6 +3,7 @@ package com.snippy.todolist;
 import android.content.Context;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
@@ -20,6 +21,7 @@ public class helper {
             os.writeObject(item);
             os.close();
         }
+
         catch(Exception e){
         e.printStackTrace();
         }
@@ -34,7 +36,12 @@ public class helper {
 
             itli = (ArrayList<String>) ois.readObject();
 
-        } catch (Exception e) {
+        }
+        catch(FileNotFoundException e){
+             itli=new ArrayList<>();
+            e.printStackTrace();
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return itli;
