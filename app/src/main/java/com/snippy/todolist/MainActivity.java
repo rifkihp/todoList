@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 arli.add(s);
                 item.setText("");
                 helper.writeData(arli,getApplicationContext());
+                adarr.notifyDataSetChanged();
             }
         });
 
