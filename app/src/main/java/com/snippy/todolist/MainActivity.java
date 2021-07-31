@@ -3,6 +3,7 @@ package com.snippy.todolist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
 
         liview.setAdapter(adarr);
 
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String s=item.getText().toString();
+                arli.add(s);
+                item.setText("");
+                helper.writeData(arli,getApplicationContext());
+            }
+        });
 
     }
 }
