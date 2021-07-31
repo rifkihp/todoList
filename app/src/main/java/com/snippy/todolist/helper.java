@@ -5,6 +5,7 @@ import android.content.Context;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -20,10 +21,12 @@ public class helper {
 
             os.writeObject(item);
             os.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch(Exception e){
-        e.printStackTrace();
-        }
+
     }
 
 
@@ -39,10 +42,12 @@ public class helper {
         catch(FileNotFoundException e){
              itli=new ArrayList<>();
             e.printStackTrace();
-        }
-        catch (Exception e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         return itli;
     }
 }
