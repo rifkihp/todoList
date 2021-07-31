@@ -1,9 +1,12 @@
 package com.snippy.todolist;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +48,37 @@ public class MainActivity extends AppCompatActivity {
                 item.setText("");
                 helper.writeData(arli,getApplicationContext());
                 adarr.notifyDataSetChanged();
+            }
+        });
+
+
+        liview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                AlertDialog.Builder alrtmsg=new AlertDialog.Builder(MainActivity.this);
+
+                alrtmsg.setTitle("Delete Task");
+                alrtmsg.setMessage("Do you want to delete this task from the list");
+                alrtmsg.setCancelable(false);
+
+                alrtmsg.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                alrtmsg.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        arli.remove(position);
+                        
+                        adarr.notifyDataSetChanged();
+
+                        helper.writeData(arli,getApplicationContext());
+                    }
+                })
             }
         });
 
