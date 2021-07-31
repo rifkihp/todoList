@@ -73,12 +73,15 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         arli.remove(position);
-                        
+
                         adarr.notifyDataSetChanged();
 
                         helper.writeData(arli,getApplicationContext());
                     }
-                })
+                });
+
+                AlertDialog aldi=alrtmsg.create();
+                aldi.show();
             }
         });
 
